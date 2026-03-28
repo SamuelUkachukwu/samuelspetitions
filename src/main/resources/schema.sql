@@ -16,6 +16,7 @@ CREATE TABLE signature (
                            id BIGINT AUTO_INCREMENT PRIMARY KEY,
                            signer_first_name VARCHAR(100),
                            signer_last_name VARCHAR(100),
+                           signer_email VARCHAR(100),
                            signed_date DATE,
                            petition_id BIGINT,
                            CONSTRAINT fk_petition

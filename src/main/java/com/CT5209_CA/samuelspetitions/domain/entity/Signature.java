@@ -16,6 +16,7 @@ public class Signature {
 
     private String signerFirstName;
     private String signerLastName;
+    private String signerEmail;
     private LocalDate signedDate = LocalDate.now();
 
     @ManyToOne
@@ -25,9 +26,10 @@ public class Signature {
     // constructors
     public Signature() {}
 
-    public Signature(String signerFirstName, String signerLastName, Petition petition) {
+    public Signature(String signerFirstName, String signerLastName, String signerEmail, Petition petition) {
         this.signerFirstName = signerFirstName;
         this.signerLastName = signerLastName;
+        this.signerEmail = signerEmail;
         this.petition = petition;
         this.signedDate = LocalDate.now();
     }
