@@ -8,10 +8,12 @@ import com.CT5209_CA.samuelspetitions.service.interfaces.PetitionService;
 import com.CT5209_CA.samuelspetitions.web.dto.PetitionRequestDTO;
 import com.CT5209_CA.samuelspetitions.web.dto.SignatureRequestDTO;
 import lombok.NonNull;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+@Service
 public class PetitionServiceImpl implements PetitionService {
     private final PetitionRepository petitionRepository;
 
