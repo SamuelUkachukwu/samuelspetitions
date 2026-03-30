@@ -13,16 +13,10 @@ public class PetitionController {
         this.petitionService = petitionService;
     }
 
-//    @GetMapping
-//    public String viewAllPetitions(Model model) {
-//        Model.addAtribute("petitions", petitionService.findAll());
-//        return "petitions";
-//    }
-    // http://localhost:8080/helloworld
-    @GetMapping("/helloworld")
-    public String helloworld(Model model) {
+    // http://localhost:8080/
+    @GetMapping("/")
+    public String home(Model model) {
         model.addAttribute("petitions", petitionService.findAll());
-        return "helloworld";
+        return "index";
     }
-
 }

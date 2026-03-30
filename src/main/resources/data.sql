@@ -1,6 +1,6 @@
 INSERT INTO petition (title, description, emoji, petitioner_first_name, petitioner_last_name, petition_body, petition_date)
 VALUES
-    ('Save the Ballinasloe Library', 'Keep the local library open for students and residents.', '\uD83D\uDCDA', 'Emeka', 'Okafor', 'The library is vital for education and community events.', '2026-03-27'),
+    ('Save the Ballinasloe Library', 'Keep the local library open for students and residents.', '🌳', 'Emeka', 'Okafor', 'The library is vital for education and community events.', '2026-03-27'),
     ('Clean Up The Lagoon', 'Requesting government action to clean Lady''s Island Lake.', '\uD83C\uDF0A', 'Ngozi', 'Chukwu', 'The lagoon pollution is affecting fishing and local health.', '2026-03-27'),
     ('Ban Plastic Bags', 'Encourage stores to stop giving out plastic bags.', '\uD83D\uDEAB', 'Sean', 'Connor', 'Plastic bags harm the environment and wildlife.', '2026-03-27'),
     ('More Street Lighting', 'Increase street lighting in rural areas.', '\uD83D\uDCA1', 'Aisling', 'Murphy', 'Better lighting improves safety and reduces crime at night.', '2026-03-27'),
