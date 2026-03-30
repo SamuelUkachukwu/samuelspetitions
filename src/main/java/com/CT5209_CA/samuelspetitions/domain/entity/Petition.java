@@ -19,7 +19,6 @@ public class Petition {
 
     private String title;
     private String description;
-    private String emoji;
     private String petitionerFirstName;
     private String petitionerLastName;
 
@@ -34,10 +33,9 @@ public class Petition {
     // constructors
     public Petition() {}
 
-    public Petition(String title, String description, String emoji, String petitionerFirstName, String petitionerLastName, String petitionBody) {
+    public Petition(String title, String description, String petitionerFirstName, String petitionerLastName, String petitionBody) {
         this.title = title;
         this.description = description;
-        this.emoji = emoji;
         this.petitionerFirstName = petitionerFirstName;
         this.petitionerLastName = petitionerLastName;
         this.petitionBody = petitionBody;

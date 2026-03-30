@@ -1,7 +1,6 @@
 package com.CT5209_CA.samuelspetitions.service.impl;
 
 import com.CT5209_CA.samuelspetitions.domain.entity.Petition;
-import com.CT5209_CA.samuelspetitions.domain.entity.PetitionEmoji;
 import com.CT5209_CA.samuelspetitions.domain.entity.Signature;
 import com.CT5209_CA.samuelspetitions.domain.repository.PetitionRepository;
 import com.CT5209_CA.samuelspetitions.service.interfaces.PetitionService;
@@ -65,7 +64,6 @@ public class PetitionServiceImpl implements PetitionService {
     private void updatePetitionFields(@NonNull Petition petition, PetitionRequestDTO dto) {
         petition.setTitle(dto.getTitle());
         petition.setDescription(dto.getDescription());
-        petition.setEmoji(dto.getEmoji());
         petition.setPetitionerFirstName(dto.getPetitionerFirstName());
         petition.setPetitionerLastName(dto.getPetitionerLastName());
         petition.setPetitionBody(dto.getPetitionBody());
@@ -80,7 +78,6 @@ public class PetitionServiceImpl implements PetitionService {
         requireNotBlank(petition.getPetitionerLastName(), "Petitioner Last Name");
         requireNotBlank(petition.getPetitionBody(), "Petition Body");
 
-        validateEmoji(petition.getEmoji());
     }
 
     private void requireNotBlank(String value, String field) {
@@ -89,12 +86,4 @@ public class PetitionServiceImpl implements PetitionService {
         }
     }
 
-    private void validateEmoji(String emoji) {
-        if (emoji == null || emoji.isBlank()) {
-            throw new IllegalArgumentException("Emoji is required");
-        }
-        if (!PetitionEmoji.isValidEmoji(emoji)) {
-            throw new IllegalArgumentException("Invalid emoji. Must be one of the allowed round-face emojis.");
-        }
-    }
 }

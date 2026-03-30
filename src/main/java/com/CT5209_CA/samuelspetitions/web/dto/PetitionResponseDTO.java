@@ -13,7 +13,6 @@ public class PetitionResponseDTO {
     private Long id;
     private String title;
     private String description;
-    private String emoji;
     private String petitionerFirstName;
     private String petitionerLastName;
     private String petitionBody;
