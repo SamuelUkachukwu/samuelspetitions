@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface PetitionRepository extends CrudRepository<Petition, Long> {
     Optional<Petition> findByTitle(String title);
+
+    Iterable<Petition> findByTitleContainingIgnoreCase(String query);
 }

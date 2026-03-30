@@ -22,13 +22,13 @@ public class PetitionServiceImpl implements PetitionService {
 
     @Override
     @Transactional
-    public Petition save(PetitionRequestDTO dto) {
+    public void save(PetitionRequestDTO dto) {
 
         validatePetition(dto);
         Petition petition = new Petition();
         updatePetitionFields(petition, dto);
 
-        return petitionRepository.save(petition);
+        petitionRepository.save(petition);
     }
 
     @Override
@@ -45,8 +45,8 @@ public class PetitionServiceImpl implements PetitionService {
 
     @Override
     @Transactional
-    public Optional<Petition> findByTitle(String title) {
-        return petitionRepository.findByTitle(title);
+    public Iterable<Petition> searchByTitle(String query) {
+        return petitionRepository.findByTitleContainingIgnoreCase(query);
     }
 
     @Override

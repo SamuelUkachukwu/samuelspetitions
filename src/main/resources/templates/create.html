@@ -31,8 +31,8 @@
                         <a class="nav-link" th:href="@{/create}">Create Petition</a>
                     </li>
                 </ul>
-                <form href="results.html" class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <form th:action="@{/search}" method="get" class="d-flex" role="search">
+                    <input name="query" class="form-control me-2" type="search" placeholder="Search" required>
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
@@ -115,12 +115,6 @@
 </div>
 <script>
     document.getElementById("copy-right").innerHTML = new Date().getFullYear();
-    setTimeout(() => {
-        const errorDiv = document.getElementById("error-messages");
-        if (errorDiv) {
-            errorDiv.style.display = "none";
-        }
-    }, 5000);
 </script>
 </body>
 

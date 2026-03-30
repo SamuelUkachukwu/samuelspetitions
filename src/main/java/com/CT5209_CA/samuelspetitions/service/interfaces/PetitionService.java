@@ -7,10 +7,10 @@ import com.CT5209_CA.samuelspetitions.web.dto.SignatureRequestDTO;
 import java.util.Optional;
 
 public interface PetitionService {
-    Petition save(PetitionRequestDTO dto);
+    void save(PetitionRequestDTO dto);
     Optional<Petition> findById(Long id);
     Iterable<Petition> findAll();
-    Optional<Petition> findByTitle(String title);
+    Iterable<Petition> searchByTitle(String query);
 
     void addSignature(Long petitionId, SignatureRequestDTO dto);
 }
