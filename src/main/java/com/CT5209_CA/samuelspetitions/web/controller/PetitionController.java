@@ -4,9 +4,12 @@ import com.CT5209_CA.samuelspetitions.domain.entity.Petition;
 import com.CT5209_CA.samuelspetitions.domain.entity.Signature;
 import com.CT5209_CA.samuelspetitions.domain.repository.PetitionRepository;
 import com.CT5209_CA.samuelspetitions.service.interfaces.PetitionService;
+import com.CT5209_CA.samuelspetitions.web.dto.PetitionRequestDTO;
 import com.CT5209_CA.samuelspetitions.web.dto.SignatureRequestDTO;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,4 +49,22 @@ public class PetitionController {
         petitionService.addSignature(id, signatureDTO);
         return "redirect:/detail/" + id;
     }
+
+    // http://localhost:8080/create
+    @GetMapping("/create")
+    public String createPetitionPage(Model model) {
+        model.addAttribute("petition", new PetitionRequestDTO());
+        return "create";
+    }
+
+    @PostMapping("/create-petition")
+    public String createPetition(@Valid @ModelAttribute("petition") PetitionRequestDTO petitionRequestDTO,  BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return "create";
+        }
+        petitionService.save(petitionRequestDTO);
+        return "redirect:/";
+    }
 }
+//th:href="@{/dogs}"
