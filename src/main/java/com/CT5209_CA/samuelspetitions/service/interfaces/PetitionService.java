@@ -12,5 +12,5 @@ public interface PetitionService {
     Iterable<Petition> findAll();
     Optional<Petition> findByTitle(String title);
 
-    Petition addSignature(Long petitionId, SignatureRequestDTO dto);
+    void addSignature(Long petitionId, SignatureRequestDTO dto);
 }

@@ -51,14 +51,14 @@ public class PetitionServiceImpl implements PetitionService {
     }
 
     @Override
-    public Petition addSignature(Long petitionId, SignatureRequestDTO dto) {
+    public void addSignature(Long petitionId, SignatureRequestDTO dto) {
         Petition petition = petitionRepository.findById(petitionId)
                 .orElseThrow(() -> new IllegalArgumentException("Petition not found"));
 
         Signature signature = new Signature(dto.getSignerFirstName(), dto.getSignerLastName(), dto.getSignerEmail(), petition);
         petition.addSignature(signature);
 
-        return petitionRepository.save(petition);
+        petitionRepository.save(petition);
     }
 
     // helper functions
