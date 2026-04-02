@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Notable&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+html {
+  font-family: "Roboto Mono", monospace !important;
+}
+
+.navbar-brand,
+.logo {
+  font-family: "Notable", sans-serif !important;
+}
+
+body {
+  background: #ffb182;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 126, 95, 1) 0%,
+    rgba(255, 195, 113, 1) 50%,
+    rgba(255, 107, 107, 1) 100%
+  );
+}
+
+.bg-custom {
+  background: rgb(255, 168, 110) !important;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
