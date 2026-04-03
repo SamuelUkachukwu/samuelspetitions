@@ -37,7 +37,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "Starting deployment..."
-                sh "sudo cp target/${APP_NAME}.war /var/lib/tomcat9/webapps/"
+                sh "sudo cp target/${APP_NAME}.war /opt/tomcat/webapps/"
                 echo 'Deployment done!'
             }
         }
